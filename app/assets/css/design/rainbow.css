@@ -1,0 +1,58 @@
+.timetable,
+.timetable-sm {
+    text-align: center;
+    background-color: white;
+}
+
+
+.timetable tr:first-child > :nth-child(1) {background-color: #dc3545; color: white}
+.timetable tr:first-child > :nth-child(2) {background-color: #fd7e14; color: white}
+.timetable tr:first-child > :nth-child(3) {background-color: #ffc107; color: white}
+.timetable tr:first-child > :nth-child(4) {background-color: #28a745; color: white}
+.timetable tr:first-child > :nth-child(5) {background-color: #007bff; color: white}
+.timetable tr:first-child > :nth-child(6) {background-color: #6610f2; color: white}
+.timetable tr:first-child > * {background-color: #e83e8c; color: white}
+
+.timetable tr > :nth-child(1) {background-color: #f5c6cb; border: 1px solid #ed969e}
+.timetable tr > :nth-child(2) {background-color: rgb(253,126,20,0.4); border: 1px solid rgb(253,126,20,0.6)}
+.timetable tr > :nth-child(3) {background-color: #ffeeba; border: 1px solid #ffdf7e}
+.timetable tr > :nth-child(4) {background-color: #c3e6cb; border: 1px solid #8fd19e}
+.timetable tr > :nth-child(5) {background-color: #b8daff; border: 1px solid #7abaff}
+.timetable tr > :nth-child(6) {background-color: rgb(102,16,242,0.4); border: 1px solid rgb(102,16,242,0.6)}
+.timetable tr > *{background-color: rgb(232,62,140,0.4); border: 1px solid rgb(232,62,140,0.6)}
+
+.timetable-sm tr:nth-child(1) > :nth-child(1) {background-color: #dc3545; color: white}
+.timetable-sm tr:nth-child(1) > :nth-child(2) {background-color: #fd7e14; color: white}
+.timetable-sm tr:nth-child(1) > :nth-child(3) {background-color: #ffc107; color: white}
+.timetable-sm tr:nth-child(1) > :nth-child(4) {background-color: #28a745; color: white}
+.timetable-sm tr:nth-child(1) > :nth-child(5) {background-color: #007bff; color: white}
+.timetable-sm tr:nth-child(1) > :nth-child(6) {background-color: #6610f2; color: white}
+.timetable-sm tr:nth-child(1) > * {background-color: #e83e8c; color: white}
+
+.timetable-sm th,
+.timetable-sm td {border: 1px solid grey}
+
+.short > .lesson-box {
+    background-color: white;
+    border-color: gray;
+}
+
+.lesson-box {
+    background: rgb(255,255,255, 0.5);
+    font: normal 100%/1.3em Times;
+    border: 1px solid white;
+    padding: 2px;
+    border-radius: 5px;
+}
+
+.subject {font-weight: bold}
+
+.timeless {
+    background-color: #bee5eb;
+    border: 1px solid #86cfda;
+}
+
+.section {
+    font-weight: bold;
+    border-bottom: 1px solid #86cfda
+}

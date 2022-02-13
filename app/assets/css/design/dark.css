@@ -1,0 +1,40 @@
+.timetable,
+.timetable-sm,
+.timeless {
+    color: white;
+    background-color: #343a40;
+    text-align: center
+}
+
+th, td {border: 1px solid #454d55}
+
+.lesson-box {
+    color: white;
+    background-color: #343a40;
+    text-align: center;
+    font: 1rem/1.3rem Times;
+    padding: 2px;
+    border: 1px solid #0AB6FF;
+    border-radius: 5px;
+}
+
+.subject {
+    font-weight: bold;
+    background: rgba(10,182,255, 0.5);
+}
+
+.section {
+    font-weight: bold;
+    border-bottom: 1px solid #454d55;
+}
+
+.timetable-sm tr:first-child th:not(:last-child),
+.timetable-sm th:nth-child(7n+1):not(:last-child),
+.timetable-sm td:nth-child(7n+1):not(:last-child) {
+    border-right: 2px solid white
+}
+
+.timetable-sm tr:nth-child(2) > *,
+.timetable-sm tr:nth-child(4n+2):not(:last-child) > *{
+    border-bottom: 2px solid white
+}

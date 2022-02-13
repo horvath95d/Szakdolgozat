@@ -1,0 +1,30 @@
+/* #timetable {} container div*/
+
+table {
+    background-color: white;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center
+}
+
+th, td {border: 2px solid whitesmoke}
+
+.lessonBox {
+    background-color: whitesmoke;
+    font: 100%/1.3em Times;
+    border: 1px solid #0AB6FF;
+    padding: 2px;
+    border-radius: 2px;
+}
+
+.subject {
+    font: bold 100%/normal Times;
+    background: rgba(10,182,255, 0.3);
+}
+
+.fix {color: red}
+
+.subjectSection {
+    font-weight: bold;
+    border-bottom: 2px solid whitesmoke
+}

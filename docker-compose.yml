@@ -1,0 +1,27 @@
+version: "3.5"
+
+services:
+
+  db:
+    container_name: timetable_database
+    build:
+      context: ./docker
+      dockerfile: Dockerfile-mysql
+    ports:
+      - "3306:3306"
+
+  php:
+    container_name: timetable_server
+    build:
+      context: ./docker
+      dockerfile: Dockerfile-php
+    volumes:
+      - ./app/:/var/www/html/
+    depends_on:
+      - db
+    ports:
+      - "80:80"
+
+networks:
+  default:
+    driver: bridge

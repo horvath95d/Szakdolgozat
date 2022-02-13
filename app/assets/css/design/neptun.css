@@ -1,0 +1,45 @@
+.timetable,
+.timetable-sm {
+    background-color: white;
+    border-top: 7px solid #c3d9ff;
+    border-left: 7px solid #c3d9ff;
+    border-bottom: 4px solid #c3d9ff;
+}
+
+th {
+    font: normal 100%/normal Arial;
+    color: #112abb;
+    background-color: #e8eef7;
+    text-align: center;
+    border: 2px solid #c3d9ff
+}
+
+.timetable tr:first-child th:first-child {background-color: #c3d9ff}
+.timetable tr {border-bottom: 2px solid #C6C6C6}
+.timetable td + td {border-left: 2px double #C6C6C6}
+
+.timetable-sm tr:first-child th:first-child,
+.timetable-sm tr:nth-child(2) th:first-child {background-color: #c3d9ff}
+
+.timetable-sm td {border: 1px solid #C6C6C6}
+
+.lesson-box {
+    text-align: left;
+    background-color: #B3C5E3;
+    font: 100%/1.3em Verdana, Sans-serif;
+    padding-left: 2px;
+    border: 1px solid #9BB6E6;
+    border-radius: 2px;
+}
+
+.subject {
+    background-color: #9BB6E6;
+    font: bold 80%/normal Verdana, Sans-serif;
+}
+
+.section {
+    font: normal 100%/normal Arial;
+    color: #112abb;
+    background-color: #e8eef7;
+    border-bottom: 2px solid #c3d9ff
+}

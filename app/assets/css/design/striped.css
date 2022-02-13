@@ -1,0 +1,25 @@
+th {
+    text-align: center;
+}
+
+.timetable-sm td {border: 1px solid gray}
+
+tr:nth-child(odd) {background-color: white}
+tr:nth-child(even) {background-color: rgba(0,0,0,.05)}
+
+
+.lesson-box {
+    text-align: center;
+    background-color: whitesmoke;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.subject {font-weight: bold}
+
+
+.section {
+    font-weight: bold;
+    border-bottom: 1px solid black;
+}
