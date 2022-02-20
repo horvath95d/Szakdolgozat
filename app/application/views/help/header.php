@@ -62,11 +62,10 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="#list2" class="topic <?=(in_array($page, array('register', 'settings', 'favorite'))) ? '':'collapsed'?>" data-toggle="collapse">Fiók kezelése<i class="fas fa-angle-down"></i></a>
-                        <ul id="list2" class="collapse <?=(in_array($page, array('register', 'settings', 'favorite'))) ? 'show':''?>">
+                        <a href="#list2" class="topic <?=(in_array($page, array('register', 'settings'))) ? '':'collapsed'?>" data-toggle="collapse">Fiók kezelése<i class="fas fa-angle-down"></i></a>
+                        <ul id="list2" class="collapse <?=(in_array($page, array('register', 'settings'))) ? 'show':''?>">
                             <li><a href="<?=site_url('help/topic/register')?>" <?=($page == 'register') ? 'class="active"':''?>>Regisztráció és aktiválás</a></li>
                             <li><a href="<?=site_url('help/topic/settings')?>" <?=($page == 'settings') ? 'class="active"':''?>>Felhasználó beállítások</a></li>
-                            <li><a href="<?=site_url('help/topic/favorite')?>" <?=($page == 'favorite') ? 'class="active"':''?>>Kedvencek</a></li>
                         </ul>
                     </li>
                     <li><a href="<?=site_url('help/about')?>" <?=($page == 'about') ? 'class="active"':''?>>Rólunk</a></li>

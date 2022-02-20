@@ -220,9 +220,11 @@ class Control_model extends CI_Model {
 
         $query = array_diff($query1[0],$query2[0]);
 
-        if (!empty($query))
-            foreach ($query as $record)
-                array_push($result, array('?teacher='.$record['teacher_id'].'&class=&room=',  getTeacherName($record['teacher_id']).' - '.getSubjectName($record['subject_id'])));
+        if (!empty($query)) {
+            foreach ($query as $record) {
+                //array_push($result, array('?teacher='.$record['teacher_id'].'&class=&room=',  getTeacherName($record['teacher_id']).' - '.getSubjectName($record['subject_id'])));
+            }
+        }
 
         return $result;
     }

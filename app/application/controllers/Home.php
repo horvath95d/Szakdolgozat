@@ -61,21 +61,6 @@ class Home extends CI_Controller {
         }
     }
 
-    public function favorite($method, $data) {
-
-        switch ($method) {
-            case 'add':
-                $name = urldecode($data); //ha töröljük az osztályokat vagy változtatjuk a nevét, ezzel lesznek gondok
-                $link = str_replace(site_url(), '', $_SERVER['HTTP_REFERER']);
-                $this->home_model->add_favorite($name, $link);
-                break;
-
-            case 'delete': $this->home_model->delete_favorite($data); break;
-            default: redirect('home/error'); break; //show_404();
-        }
-        header('Location: '.$_SERVER['HTTP_REFERER']);
-    }
-
     public function lang($lang) {
         $_SESSION['lang'] = $lang;
         header('Location: '.$_SERVER['HTTP_REFERER']);
