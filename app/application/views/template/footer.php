@@ -14,17 +14,12 @@
     <script src="<?=site_url('assets/vendor/jquery/jquery-3.4.1.min.js')?>"></script>
     <script src="<?=site_url('assets/vendor/bootstrap/js/bootstrap.bundle.min.js')?>"></script>
     <?php
-    if (isset($_SESSION['message']))
-        echo"<script> let message = ".json_encode($_SESSION['message'])."</script>";
-        
     switch ($this->router->class) {
         case 'home':
             echo "<script src=".site_url('assets/js/timetable.js')."></script>";
-            echo "<script src=".site_url('assets/js/excel.js')."></script>";
         break;
 
         case 'school':
-            echo "<script src=".site_url('assets/js/excel.js')."></script>";
             switch ($this->router->method) {
                 case 'subject': echo "<script src=".site_url('assets/js/school/subject.js')."></script>"; break;
                 case 'teacher': echo "<script src=".site_url('assets/js/school/teacher.js')."></script>"; break;
@@ -34,7 +29,6 @@
             break;
             
         case 'lesson':
-            echo "<script src=".site_url('assets/js/excel.js')."></script>";
             switch ($this->router->method) {
                 case 'no': echo "<script src=".site_url('assets/js/lesson/no.js')."></script>"; break;
                 case 'class':
@@ -48,10 +42,9 @@
 
         case 'settings':
             echo "<script src=".site_url('assets/js/settings.js')."></script>";
-            echo "<script src=".site_url('assets/js/excel.js')."></script>";
             break;
     }
     ?>
-    <script src="<?=site_url('assets/js/script.js')?>"></script>
+    <script src="<?=site_url('assets/js/excel.js')?>"></script>;
 </body>
 </html>

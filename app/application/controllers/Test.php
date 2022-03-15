@@ -9,7 +9,7 @@ class Test extends CI_Controller
         $this->load->library('unit_test');
         $this->unit->set_test_items(array('test_name', 'result', 'line'));
 
-        $str = '<p>{rows} {result} {/rows}</p>';
+        $str = '<p>{rows} {result} - {/rows}</p>';
 
         $this->unit->set_template($str);
     }

@@ -13,7 +13,7 @@ INSERT INTO `school` (`id`, `owner_id`, `full_name`, `short_name`, `year`, `days
 INSERT INTO `users` (`id`, `school_id`, `username`, `email`, `password`, `created_on`, `active_end`, `ip_address`, `activation_selector`, `activation_code`, `forgotten_password_selector`, `forgotten_password_code`, `forgotten_password_time`, `remember_selector`, `remember_code`, `last_login`, `active`) VALUES
     (1, 1, 'Albus Dumbledore', 'admin@admin.com', '$2y$10$hzsJ2B.y2LSu42yzB3gBMeyPIwUldqu/gefyn9gmLK570d9MBpyHm', '2000-01-01', '2100-01-01', '127.0.0.1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1),
     (2, 1, 'Minerva McGalagony', 'admin2@admin.com', '$2y$10$hzsJ2B.y2LSu42yzB3gBMeyPIwUldqu/gefyn9gmLK570d9MBpyHm', '2000-01-01', '2010-01-01', '127.0.0.1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1),
-    (3, 1, 'Test User 3', 'admin3@admin.com', '$2y$10$hzsJ2B.y2LSu42yzB3gBMeyPIwUldqu/gefyn9gmLK570d9MBpyHm', '2000-01-01', '2100-01-01', '127.0.0.1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1);
+    (3, 2, 'Test User 3', 'admin3@admin.com', '$2y$10$hzsJ2B.y2LSu42yzB3gBMeyPIwUldqu/gefyn9gmLK570d9MBpyHm', '2000-01-01', '2100-01-01', '127.0.0.1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1);
 
 -- --------------------------------------------------------
 
