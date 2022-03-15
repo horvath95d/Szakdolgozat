@@ -45,6 +45,6 @@
             break;
     }
     ?>
-    <script src="<?=site_url('assets/js/excel.js')?>"></script>;
+    <script src="<?=site_url('assets/js/excel.js')?>"></script>
 </body>
 </html>
