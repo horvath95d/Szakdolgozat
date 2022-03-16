@@ -1,11 +1,11 @@
 <?php 
-if (!defined('BASEPATH')) exit('No direct script access allowed');  
- 
+if (!defined('BASEPATH')) exit('No direct script access allowed');
+
 require_once 'dompdf/autoload.inc.php';
 
 use Dompdf\Dompdf;
 
-class Pdf extends Dompdf
+class Ci_dompdf extends Dompdf
 {
 	public function __construct()
 	{
@@ -13,4 +13,3 @@ class Pdf extends Dompdf
 	} 
 }
 
-?>

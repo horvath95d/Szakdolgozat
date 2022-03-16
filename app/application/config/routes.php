@@ -55,7 +55,6 @@ $route['translate_uri_dashes'] = FALSE;
 
 //home
 $route['inactive'] = 'home/inactive';
-$route['pdf'] = 'home/pdf';
 
 //auth
 $route['login'] = 'auth/login';

@@ -10,12 +10,10 @@ class Home extends CI_Controller {
 		if ($this->ion_auth->logged_in()) {
 
             $this->load->model(['home_model', 'school_model']);
-            //$this->load->library('pdf');
         }
     }
     
     public function index() {
-
         if ($this->ion_auth->logged_in()) {
             $teacherID = empty($_GET['teacher']) ? '' : $_GET['teacher'];
             $classID = empty($_GET['class']) ? '' : $_GET['class'];
@@ -29,7 +27,6 @@ class Home extends CI_Controller {
             $data['lessons'] = $this->home_model->getLessons($teacherID, $classID, $roomID);
             
             $this->render_page('home/index', $data);
-        
         } else {
             $this->load->model('home_model');
             $data['number'] = $this->home_model->getLoginPageData();
@@ -39,23 +36,20 @@ class Home extends CI_Controller {
     }
 
     public function inactive() {
-
         if ($this->ion_auth->logged_in()) {
             $data['title'] = 'Inactive';
             $this->render_page('errors/inactive', $data);
-        } else
+        } else {
             redirect('');
+        }
     }
 
     public function error() {
-
+        $data['title'] = 'Hiba történt';
         if ($this->ion_auth->logged_in()) {
-            $data['title'] = 'Hiba történt';
             $data['user'] = $this->ion_auth->user()->row();
-    
             $this->render_page('errors/error', $data);
         } else {
-            $data['title'] = 'Hiba történt';
             $this->load->view('template/header', $data);
             $this->load->view('errors/error');
         }
@@ -214,12 +208,5 @@ class Home extends CI_Controller {
     public function emptying() {
         $this->home_model->emptying();
         header('Location: ' . $_SERVER['HTTP_REFERER']);
-    }
-
-    public function pdf() {
-        $title = $this->school['short_name'];
-        $title .= empty($_GET['teacher']) ? '' : ' - '.getTeacherName($_GET['teacher']);
-        $title .= empty($_GET['class']) ? '' : ' - '.getClassName($_GET['class']);
-        $title .= empty($_GET['room']) ? '' : ' - '.getRoomName($_GET['room']);
     }
 }

@@ -57,7 +57,7 @@
 
             <div class="card mt-3">
                 <div class="card-header">
-                    <a href="calendar/pdf" target="_blank" class="float-right" title="<?=lang('print_title')?>">
+                    <a href="pdf/calendar" target="_blank" class="float-right" title="<?=lang('print_title')?>">
                         <img src="assets/img/icons/print.png" alt="<?=lang('print')?>">
                         <span>&nbsp;<?=lang('print')?></span>
                     </a>
