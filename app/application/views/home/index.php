@@ -143,18 +143,6 @@
                 <img src="<?=site_url("assets/img/icons/insert.png")?>" alt="<?=lang('generate_title')?>">
                 <?=lang('generate')?>
             </a>
-            <a href="home/removeRooms" class="mr-2" title="<?=lang('removeRooms_title')?>" onclick="return confirm('<?=lang('removeRooms_confirm')?>')">
-                <img src="<?=site_url("assets/img/icons/roomoff.png")?>" alt="<?=lang('removeRooms_title')?>">
-                <?=lang('removeRooms')?>
-            </a>
-            <a href="home/removeLessons" class="mr-2" title="<?=lang('removeLessons_title')?>" onclick="return confirm('<?=lang('removeLessons_confirm')?>')">
-                <img src="<?=site_url("assets/img/icons/empty.png")?>" alt="<?=lang('removeLessons_title')?>">
-                <?=lang('removeLessons')?>
-            </a>
-            <a href="home/emptying" class="mr-2" title="<?=lang('emptying_title')?>" onclick="return confirm('<?=lang('emptying_confirm')?>')">
-                <img src="<?=site_url("assets/img/icons/emptying.png")?>" alt="<?=lang('emptying')?>">
-                <?=lang('emptying')?>
-            </a>
             <a href="#" id="export" class="mr-2" title="<?=lang('btn_export_title')?>" download="<?=$school['short_name']?>-<?=$title?>.xls">
                 <img src="<?=site_url('assets/img/icons/export.png')?>" alt="<?=lang('btn_export_title')?>">
                 <?=lang('btn_export')?>
@@ -162,6 +150,19 @@
             <a href="pdf<?=isset($_GET['teacher']) ? '/?teacher='.$_GET['teacher'].'&class='.$_GET['class'].'&room='.$_GET['room']:''?>" target="_blank" class="mr-2" title="<?=lang('print_title')?>">
                 <img src="assets/img/icons/print.png" alt="<?=lang('print_title')?>">
                 <?=lang('print')?>
+            </a>
+            <br>
+            <a href="home/fixRoomsRemove" class="mr-2" title="<?=lang('fixRoomsRemove_title')?>" onclick="return confirm('<?=lang('fixRoomsRemove_confirm')?>')">
+                <img src="<?=site_url("assets/img/icons/roomoff.png")?>" alt="<?=lang('fixRoomsRemove_title')?>">
+                <?=lang('fixRoomsRemove')?>
+            </a>
+            <a href="home/fixTimeRemove" class="mr-2" title="<?=lang('fixTimeRemove_title')?>" onclick="return confirm('<?=lang('fixRoomsRemove_confirm')?>')">
+                <img src="<?=site_url("assets/img/icons/empty.png")?>" alt="<?=lang('fixTimeRemove_title')?>">
+                <?=lang('fixTimeRemove')?>
+            </a>
+            <a href="home/emptying" class="mr-2" title="<?=lang('removeLessons_title')?>" onclick="return confirm('<?=lang('removeLessons_confirm')?>')">
+                <img src="<?=site_url("assets/img/icons/emptying.png")?>" alt="<?=lang('removeLessons_title')?>">
+                <?=lang('removeLessons')?>
             </a>
         </div>
     </div>

@@ -85,19 +85,17 @@ class Home extends CI_Controller {
     public $countTimes;
 
     public function generate() {
+        // TODO: megcsinálni
         //$this->classes = $this->school_model->getClasses();
         //$this->countTimes = count($this->school_model->getTimes());
         //$this->backTrack(1,1,0);
 
-        $classes = $this->school_model->getClasses();
         if ($this->home_model->validate()) {
             $countTimes = count($this->school_model->getTimes())+1;
             $classes = $this->school_model->getClasses();
             
             for ($t=1; $t < $countTimes; $t++) { // óra ciklus
-    
                 for ($d=1; $d < $this->school['days']+1; $d++) { // nap ciklus
-    
                     foreach ($classes as $class) { // osztály ciklus
                         $fixedLesson = $this->home_model->getFixedLesson($t, $d, $class['id'], $class['year']);
 
@@ -117,6 +115,7 @@ class Home extends CI_Controller {
                 }
             }
 
+            /*
             $timelessLessons = $this->home_model->getTimelessLessons(); // meg keressük az első körben kimaradt órákat
 
             while (!empty($timelessLessons)) {
@@ -133,6 +132,7 @@ class Home extends CI_Controller {
             }
 
             $this->session->set_flashdata('message', '');
+            */
         }
 
         header('Location: ' . $_SERVER['HTTP_REFERER']);
@@ -201,13 +201,13 @@ class Home extends CI_Controller {
             $this->OK = true;
     }
     
-    public function removeRooms() {
-        $this->home_model->removeRooms();
+    public function fixRoomsRemove() {
+        $this->home_model->fixRoomsRemove();
         header('Location: ' . $_SERVER['HTTP_REFERER']);
     }
 
-    public function removeLessons() {
-        $this->home_model->removeLessons();
+    public function fixTimeRemove() {
+        $this->home_model->fixTimeRemove();
         header('Location: ' . $_SERVER['HTTP_REFERER']);
     }
 

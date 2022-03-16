@@ -203,19 +203,21 @@ class Home_model extends CI_Model {
         return $query->result_array();
     }
     
-    public function removeRooms() {
-        // ez full megölt minden mást :_)
-        //$this->db->where(['school_id' => $this->school_id]);
-        //$this->db->update('lesson', ['room_id' => NULL, 'fix_room' => 0]);
+    public function fixRoomsRemove() {
+        $this->db->where(['school_id' => $this->school_id, 'fix_room' => 1]);
+        $this->db->update('lesson', ['room_id' => NULL, 'fix_room' => 0]);
     }
 
-    public function removeLessons() {
-        $this->db->where(['school_id' => $this->school_id, 'fix_time' => 0]);
+    public function fixTimeRemove() {
+        $this->db->where(['school_id' => $this->school_id, 'fix_time' => 1]);
         $this->db->update('lesson', ['day' => 0, 'time' => 0]);
     }
 
     public function emptying() {
-        $this->db->where('school_id', $this->school_id);
-        $this->db->update('lesson', ['fix_time' => 0, 'day' => 0, 'time' => 0]);
+        $this->db->where(['school_id' => $this->school_id, 'fix_room' => 0]);
+        $this->db->update('lesson', ['room_id' => NULL]);
+
+        $this->db->where(['school_id' => $this->school_id, 'fix_time' => 0]);
+        $this->db->update('lesson', ['day' => 0, 'time' => 0]);
     }
 }
