@@ -49,15 +49,6 @@
                         </div>
                         <div class="row border-bottom m-0">
                             <div class="col-4 py-2 border-right">
-                                <label for="emblem"><?=lang('emblem')?></label>
-                            </div>
-                            <div class="col-8 py-2">
-                                <?php if (!empty($school['emblem'])) echo "<img src=".site_url('assets/img/emblem/'.$school['emblem'])."><br>" ?>
-                                <input type="file" id="emblem" name="emblem" class="mt-2" value="<?=site_url('assets/img/emblem/'.$school['emblem'])?>">
-                            </div>
-                        </div>
-                        <div class="row border-bottom m-0">
-                            <div class="col-4 py-2 border-right">
                                 <label for="code"><?=lang('code')?></label><span id="eye" class="ml-2"><i class="far fa-eye-slash"></i></span>
                             </div>
                             <div class="col-8 py-2">

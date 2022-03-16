@@ -10,6 +10,14 @@
                     <form action="settings/index" method="post" accept-charset="utf-8">
                         <div class="row border-bottom m-0">
                             <div class="col-4 py-2 border-right">
+                                <label for="username"><?=lang('username')?></label>
+                            </div>
+                            <div class="col-8 py-2">
+                                <input type="text" class="form-control form-control-sm w-75" id="username" name="username" value="<?=$user->username?>">
+                            </div>
+                        </div>
+                        <div class="row border-bottom m-0">
+                            <div class="col-4 py-2 border-right">
                                 <label for="email"><?=lang('email')?></label>
                             </div>
                             <div class="col-8 py-2">

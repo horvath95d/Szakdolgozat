@@ -119,7 +119,8 @@ class CI_Controller {
         $this->load->view('template/footer', $data);
     }
 
-    public function check_active() {
+    public function check_active(): bool
+    {
         return $this->user->active_end > date("Y-m-d");
     }
 }

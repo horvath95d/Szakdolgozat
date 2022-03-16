@@ -4,9 +4,9 @@ START TRANSACTION;
 
 SET NAMES utf8mb4;
 
-INSERT INTO `school` (`id`, `owner_id`, `full_name`, `short_name`, `year`, `days`, `emblem`, `code`) VALUES
-    (1, 1, 'Roxfort Boszorkány- és Varázslóképző Szakiskola', 'Roxfort', '2021/2022', 5, 'roxfort.png', 'phoenix'),
-    (2, 3, 'Egy teljesen átlagos iskola', 'Iskola', '2021/2022', 5, NULL, 'code');
+INSERT INTO `school` (`id`, `owner_id`, `full_name`, `short_name`, `year`, `days`, `code`) VALUES
+    (1, 1, 'Roxfort Boszorkány- és Varázslóképző Szakiskola', 'Roxfort', '2021/2022', 5, 'phoenix'),
+    (2, 3, 'Egy teljesen átlagos iskola', 'Iskola', '2021/2022', 5, 'code');
 
 -- --------------------------------------------------------
 

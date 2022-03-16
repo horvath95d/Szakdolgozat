@@ -233,8 +233,8 @@ if ( ! function_exists('password_verify'))
 	 * @param	string	$hash
 	 * @return	bool
 	 */
-	function password_verify($password, $hash)
-	{
+	function password_verify($password, $hash): bool
+    {
 		if (strlen($hash) !== 60 OR strlen($password = crypt($password, $hash)) !== 60)
 		{
 			return FALSE;

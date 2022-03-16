@@ -1,13 +1,12 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Settings_model extends CI_Model {
-    
-    public function updateIndex() {
 
+    public function updateIndex() {
         if (password_verify($_POST['current-password'], $this->user->password)) {
             $this->db->set(array(
-                'email' => $_POST['email'],
-                'design' => $_POST['design']
+                'username' => $_POST['username'],
+                'email' => $_POST['email']
             ));
             $this->db->where('id', $this->user->id);
             $this->db->update('users');
@@ -45,7 +44,6 @@ class Settings_model extends CI_Model {
                 'short_name' => $_POST['short_name'],
                 'year' => $_POST['year1'].'/'.$_POST['year2'],
                 'days' => $_POST['days'],
-                'emblem' => $_POST['emblem'],
                 'code' => $_POST['code']
             ));
             $this->db->where('owner_id', $this->user->id);

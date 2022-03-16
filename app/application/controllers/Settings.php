@@ -17,7 +17,6 @@ class Settings extends CI_Controller {
     }
 
     public function index() {
-
         if (empty($_POST)) {
             $this->render_page('settings/index', $this->data);
         } else {
@@ -27,12 +26,9 @@ class Settings extends CI_Controller {
     }
 
     public function security() {
-
         if (empty($_POST)) {
             $this->render_page('settings/security', $this->data);
-
         } else {
-
             if ($_POST['new-password'] == $_POST['confirm-password']) {
                 $identity = $this->session->userdata('identity');
                 $change = $this->ion_auth->change_password($identity, $_POST['current-password'], $_POST['new-password']);
@@ -42,17 +38,14 @@ class Settings extends CI_Controller {
                 } else {
                     $this->session->set_flashdata('message', $this->ion_auth->errors());
                 }
-
             } else {
                 $this->session->set_flashdata('message', 'Nem egyezik a két új jelszó');
             }
-
             redirect('settings/security');
         }
     }
     
     public function active() {
-
         if (empty($_POST)) {
             $this->render_page('settings/active', $this->data);
         } else {
@@ -63,7 +56,6 @@ class Settings extends CI_Controller {
     }
     
     public function school() {
-
         if (empty($_POST)) {
             $this->data['users'] = $this->settings_model->getSchoolUsers($this->user->school_id);
             $this->render_page('settings/school', $this->data);

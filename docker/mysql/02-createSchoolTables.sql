@@ -10,7 +10,6 @@ CREATE TABLE `school`
     `short_name` varchar(15)  DEFAULT NULL,
     `year`       varchar(9)   DEFAULT NULL,
     `days`       tinyint(4) DEFAULT 5,
-    `emblem`     varchar(100) DEFAULT NULL,
     `code`       varchar(25)  DEFAULT NULL
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
