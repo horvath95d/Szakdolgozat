@@ -4,15 +4,12 @@ class Calendar extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
-        if ($this->ion_auth->logged_in()) {
-            if (! $this->check_active()) {
-                redirect('inactive', 'refresh');
-            }
-            $this->load->model('calendar_model');
-            $this->lang->load(['template', 'calendar'], $this->session->userdata('language'));
-        } else {
-            redirect('', 'refresh');
-        }
+
+        $this->checkLoggedIn();
+        $this->checkActiveAccount();
+
+        $this->load->model('calendar_model');
+        $this->lang->load(['template', 'calendar'], $this->session->userdata('language'));
     }
 
     public function index() {

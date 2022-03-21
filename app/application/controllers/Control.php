@@ -7,19 +7,12 @@ class Control extends CI_Controller {
     public function __construct() {
         parent::__construct();
 
-        if ($this->ion_auth->logged_in()) {
-            
-            if (! $this->check_active())
-                redirect('inactive', 'refresh');
+        $this->checkLoggedIn();
+        $this->checkActiveAccount();
 
-            $this->load->model('control_model');
-            $this->lang->load(['template', 'control'], $this->session->userdata('language'));
-
-            $this->data['title'] = lang('title');
-            
-        } else {
-            redirect('', 'refresh');
-        }
+        $this->load->model('control_model');
+        $this->lang->load(['template', 'control'], $this->session->userdata('language'));
+        $this->data['title'] = lang('title');
     }
 
     public function school() {

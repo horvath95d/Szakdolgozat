@@ -19,7 +19,7 @@
                 <div>
                     <i class="fas fa-user mr-1"></i>
                     <span><?=$user->username.' - '.$school['short_name'].' '.$school['year']?></span> 
-                    <?=get_instance()->check_active()
+                    <?=$user->active_end > date("Y-m-d")
                     ? '<a href="'.site_url('settings/active').'">['.lang('active').']</a>'
                     : '<a href="'.site_url('settings/active').'" class="text-danger">['.lang('inactive').']</a>' ?>
                 </div>

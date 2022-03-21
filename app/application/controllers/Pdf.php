@@ -4,6 +4,7 @@ class Pdf extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
+
         $this->load->library('Ci_dompdf');
         $this->load->model(['home_model', 'school_model', 'calendar_model']);
     }

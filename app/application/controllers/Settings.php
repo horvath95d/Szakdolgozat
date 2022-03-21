@@ -7,13 +7,11 @@ class Settings extends CI_Controller {
     public function __construct() {
         parent::__construct();
 
-        if ($this->ion_auth->logged_in()) {
-            $this->load->model('settings_model');
-            $this->lang->load(['template', 'settings'], $this->session->userdata('language'));
-            $this->data['title'] = lang('title');
-        } else  {
-            redirect('');
-        }
+        $this->checkLoggedIn();
+
+        $this->load->model('settings_model');
+        $this->lang->load(['template', 'settings'], $this->session->userdata('language'));
+        $this->data['title'] = lang('title');
     }
 
     public function index() {

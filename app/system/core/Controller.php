@@ -119,8 +119,15 @@ class CI_Controller {
         $this->load->view('template/footer', $data);
     }
 
-    public function check_active(): bool
-    {
-        return $this->user->active_end > date("Y-m-d");
+    public function checkLoggedIn() {
+        if (! $this->ion_auth->logged_in()) {
+            redirect('', 'refresh');
+        }
+    }
+
+    public function checkActiveAccount() {
+        if ($this->user->active_end < date("Y-m-d")) {
+            redirect('inactive', 'refresh');
+        }
     }
 }

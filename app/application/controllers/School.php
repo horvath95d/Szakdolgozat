@@ -5,16 +5,11 @@ class School extends CI_Controller {
     public function __construct() {
         parent::__construct();
 
-        if ($this->ion_auth->logged_in()) {
-            
-            if (! $this->check_active())
-                redirect('inactive', 'refresh');
+        $this->checkLoggedIn();
+        $this->checkActiveAccount();
 
-            $this->load->model('school_model');
-            $this->lang->load(['template', 'school'], $this->session->userdata('language'));
-
-        } else
-            redirect('', 'refresh');
+        $this->load->model('school_model');
+        $this->lang->load(['template', 'school'], $this->session->userdata('language'));
     }
 
     public function subject() {
