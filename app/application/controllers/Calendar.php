@@ -9,7 +9,7 @@ class Calendar extends CI_Controller {
                 redirect('inactive', 'refresh');
             }
             $this->load->model('calendar_model');
-            $this->lang->load('calendar');
+            $this->lang->load(['template', 'calendar'], $this->session->userdata('language'));
         } else {
             redirect('', 'refresh');
         }

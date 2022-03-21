@@ -326,8 +326,8 @@ class Ion_auth
 	 * @author Mathew
 	 **/
 	public function logout()
-	{	
-		$lang = $_SESSION['lang'] ?? 'hungarian';
+	{
+        $lang = $this->session->userdata('language');
 		$this->ion_auth_model->trigger_events('logout');
 
 		$identity = $this->config->item('identity', 'ion_auth');
@@ -346,8 +346,8 @@ class Ion_auth
 
 		// Recreate the session
 		session_start();
-		$_SESSION['lang'] = $lang;
 		$this->session->sess_regenerate(TRUE);
+        $this->session->set_userdata('language', $lang);
 
 		$this->set_message('logout_successful');
 		return TRUE;

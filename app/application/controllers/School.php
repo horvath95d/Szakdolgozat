@@ -11,7 +11,7 @@ class School extends CI_Controller {
                 redirect('inactive', 'refresh');
 
             $this->load->model('school_model');
-            $this->lang->load(['template', 'school']);
+            $this->lang->load(['template', 'school'], $this->session->userdata('language'));
 
         } else
             redirect('', 'refresh');

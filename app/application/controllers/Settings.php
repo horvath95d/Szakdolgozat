@@ -9,7 +9,7 @@ class Settings extends CI_Controller {
 
         if ($this->ion_auth->logged_in()) {
             $this->load->model('settings_model');
-            $this->lang->load(['template', 'settings']);
+            $this->lang->load(['template', 'settings'], $this->session->userdata('language'));
             $this->data['title'] = lang('title');
         } else  {
             redirect('');

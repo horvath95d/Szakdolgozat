@@ -5,7 +5,7 @@ class Home extends CI_Controller {
     public function __construct() {
         parent::__construct();
         
-        $this->lang->load(['template', 'auth', 'home']);
+        $this->lang->load(['template', 'auth', 'home'], $this->session->userdata('language'));
         
 		if ($this->ion_auth->logged_in()) {
 
@@ -56,7 +56,7 @@ class Home extends CI_Controller {
     }
 
     public function lang($lang) {
-        $_SESSION['lang'] = $lang;
+        $this->session->set_userdata('language', $lang);
         header('Location: '.$_SERVER['HTTP_REFERER']);
     }
 

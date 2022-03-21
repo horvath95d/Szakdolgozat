@@ -4,7 +4,7 @@ class Help extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
-        $this->lang->load(['template', 'help']);
+        $this->lang->load(['template', 'help'], $this->session->userdata('language'));
     }
 
     public function index($cat = '', $page = '') {

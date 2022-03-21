@@ -13,7 +13,7 @@ class Control extends CI_Controller {
                 redirect('inactive', 'refresh');
 
             $this->load->model('control_model');
-            $this->lang->load(['template', 'control']);
+            $this->lang->load(['template', 'control'], $this->session->userdata('language'));
 
             $this->data['title'] = lang('title');
             
