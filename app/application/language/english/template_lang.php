@@ -1,35 +1,1 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-
-$lang['site_name']  = 'Timetable creator';
-
-// header
-$lang['active']     = 'Active';
-$lang['inactive']   = 'Inactive';
-$lang['language']   = 'Language';
-
-// links
-$lang['link_home']      = 'Home';
-$lang['link_help']      = 'Help Center';
-$lang['link_faq']       = 'FAQ';
-$lang['link_about']     = 'About';
-$lang['link_contact']   = 'Contact';
-$lang['link_settings']  = 'Settings';
-$lang['link_timetable'] = 'Timetable';
-$lang['link_school']    = 'School';
-$lang['link_lesson']    = 'Lessons';
-$lang['link_control']   = 'Control';
-$lang['link_logout']    = 'Logout';
-
-// buttons
-$lang['btn_save']   = 'Save';
-
-// footer
-$lang['slogan']         = 'Add meg a tanárok névsorát, osztályok listáját. Hozz létre tanórákat, összevont órákat, csoportbontásos órákat, lyukas órákat. Válassz párnak fix időpontot és a többit ütközés nélkül beigazítja a rendszer a helyére.';
-$lang['useful_links']   = 'Useful links';
-$lang['contact']        = 'Contact';
-$lang['location']       = 'Hungary, Eger';
-$lang['mail']           = 'support@support.com';
-$lang['hun']            = 'hungarian';
-$lang['eng']            = 'english';
-$lang['ger']            = 'german';
+<?php defined('BASEPATH') OR exit('No direct script access allowed');$lang['site_name'] = 'Timetable creator';// header$lang['active'] = 'Active';$lang['inactive'] = 'Inactive';$lang['link_help'] = 'Help center';$lang['link_settings'] = 'Settings';$lang['link_language'] = 'Language';$lang['hun'] = 'Hungarian';$lang['eng'] = 'English';$lang['ger'] = 'German';$lang['link_timetable'] = 'Timetable';$lang['link_school'] = 'School';$lang['link_subject'] = 'Subjects';$lang['link_teacher'] = 'Teachers';$lang['link_room'] = 'Rooms';$lang['link_class'] = 'Classes';$lang['link_lesson'] = 'Lessons';$lang['link_control'] = 'Control';$lang['link_calendar'] = 'Calendar';$lang['link_logout'] = 'Logout';$lang['link_no'] = 'Tanári lyukasórák';$lang['lessons_of_years'] = 'Lessons of years';$lang['lessons_of_classes'] = 'Lessons of classes';// footer$lang['useful_links'] = 'Useful links';$lang['link_home'] = 'Home page';$lang['contact'] = 'Contact';$lang['location'] = 'Hungary, Eger';$lang['mail'] = 'support@support.com';// days$lang['monday'] = 'Monday';$lang['tuesday'] = 'Tuesday';$lang['wednesday'] = 'Wednesday';$lang['thursday'] = 'Thursday';$lang['friday'] = 'Friday';$lang['saturday'] = 'Saturday';$lang['sunday'] = 'Sunday';// buttons$lang['btn_register'] = 'Register';$lang['btn_save'] = 'Save';$lang['btn_remove'] = 'Remove';$lang['btn_export'] = 'Export';$lang['btn_export_title'] = 'Export to Excel sheet';$lang['print'] = 'Print';$lang['print_title'] = 'PDF view and print';$lang['btn_confirm_remove'] = 'Are you sure about deleting?';$lang['btn_insert'] = 'Insert';$lang['btn_insert_title'] = 'Insert new row';// package$lang['package_month'] = 'Month';$lang['package1_price'] = '25.00 €';$lang['package2_price'] = '45.00 €';$lang['package3_price'] = '85.00 €';// footer$lang['contact']        = 'Contact';$lang['policies_terms'] = 'Terms & Conditions';$lang['policies_privacy'] = 'Privacy';$lang['policies_cookie'] = 'Cookies';

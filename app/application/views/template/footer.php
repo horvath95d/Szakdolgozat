@@ -1,11 +1,11 @@
     <footer>
         <div class="container">
             <ul class="list-style-none">
-                <li class="float-left mr-2"><a href="help/contact">Kapcsolat</a></li>
-                <li class="float-left mr-2"><a href="help">Súgó központ</a></li>
-                <li class="float-left mr-2"><a href="help/policies/terms">Felhasználási feltétlek</a></li>
-                <li class="float-left mr-2"><a href="help/policies/privacy">Adatvédelem</a></li>
-                <li class="float-left mr-2"><a href="help/policies/cookies">Cookie</a></li>
+                <li class="float-left mr-2"><a href="help/contact"><?=lang('contact')?></a></li>
+                <li class="float-left mr-2"><a href="help"><?=lang('link_help')?></a></li>
+                <li class="float-left mr-2"><a href="help/policies/terms"><?=lang('policies_terms')?></a></li>
+                <li class="float-left mr-2"><a href="help/policies/privacy"><?=lang('policies_privacy')?></a></li>
+                <li class="float-left mr-2"><a href="help/policies/cookies"><?=lang('policies_cookie')?></a></li>
             </ul>
             <div class="float-right">&copy; <?=date("Y")?> Horváth Dániel</div>
         </div>
