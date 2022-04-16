@@ -97,7 +97,7 @@ class Home_model extends CI_Model {
             HAVING COUNT(*) > 1")->row_array();
         
         if (!empty($class)) {
-            $this->session->set_flashdata('message', get_class_name($class['class_id']).' órarendjében 2 óra van egy időpontra beállítva!');
+            $this->session->set_flashdata('message', getClassName($class['class_id']).' órarendjében 2 óra van egy időpontra beállítva!');
             return false;
         }
 
@@ -119,7 +119,7 @@ class Home_model extends CI_Model {
             HAVING COUNT(*) > 1")->row_array();
         
         if (!empty($room)) {
-            $this->session->set_flashdata('message', get_room_name($room['room_id']).' órarendjében 2 óra van egy időpontra beállítva!');
+            $this->session->set_flashdata('message', getRoomName($room['room_id']).' órarendjében 2 óra van egy időpontra beállítva!');
             return false;
         }
 
@@ -165,9 +165,17 @@ class Home_model extends CI_Model {
         $query = $this->db->query("SELECT `room_id` FROM `room_subject`
             WHERE `subject_id`=".$subjectID."
             GROUP BY `subject_id` HAVING COUNT(*) = 1");
-        return $query->row_array()['room_id'];
 
+        if (isset($query->row_array()['room_id'])) {
+            return $query->row_array()['room_id'];
+        }
 
+        $query = $this->db->query("SELECT `id` FROM `room`
+            WHERE `school_id`=".$this->school_id);
+
+        if (isset($query->result_array()[0]['id'])) {
+            return $query->result_array()[rand(0, count($query->result_array()))]['id'];
+        }
     }
 
     public function getPlace($lesson): array
@@ -210,7 +218,7 @@ class Home_model extends CI_Model {
 
     public function fixTimeRemove() {
         $this->db->where(['school_id' => $this->school_id, 'fix_time' => 1]);
-        $this->db->update('lesson', ['day' => 0, 'time' => 0]);
+        $this->db->update('lesson', ['fix_time' => 0, 'day' => 0, 'time' => 0]);
     }
 
     public function emptying() {
