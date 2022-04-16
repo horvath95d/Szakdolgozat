@@ -12,11 +12,9 @@ class School_model extends CI_Model {
     }
 
     public function getTeachers() {
-        $query = $this->db->query("SELECT `teacher`.*, COUNT(*) AS 'lessonNumber'
+        $query = $this->db->query("SELECT `teacher`.*
             FROM `teacher`
-            JOIN `lesson` ON `teacher_id` = `teacher`.`id`
             WHERE `teacher`.`school_id`=".$this->school_id."
-            GROUP BY `teacher_id`
             ORDER BY `name` ASC");
         return $query->result_array();
     }
@@ -77,8 +75,9 @@ class School_model extends CI_Model {
                     $this->db->where(array('id' => $_POST['id'][$i]));
                     $this->db->update('subject', $record);
     
-                } else
+                } else {
                     $this->db->insert('subject', $record);
+                }
             }
         }
         $this->session->set_flashdata('message', $this->db->error()['message']);
@@ -208,7 +207,6 @@ class School_model extends CI_Model {
     }
 
     public function saveTimes() {
-
         for ($i=0; $i < count($_POST['start']); $i++) {
 
             if (!empty($_POST['start'][$i] && $_POST['end'][$i])) {

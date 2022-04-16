@@ -218,9 +218,11 @@ class Control_model extends CI_Model {
         $query2 = $this->db->query("SELECT `subject_id`, `teacher_id` FROM `teacher_subject`
             WHERE `school_id`=".$this->school_id)->result_array();
 
-        $query = array_diff($query1[0],$query2[0]);
+        if (!empty($query1) && !empty($query2)) {
+            $query = array_diff($query1[0],$query2[0]);
+        }
 
-        if (!empty($query)) {
+        if (isset($query)) {
             foreach ($query as $record) {
                 //array_push($result, array('?teacher='.$record['teacher_id'].'&class=&room=',  getTeacherName($record['teacher_id']).' - '.getSubjectName($record['subject_id'])));
             }

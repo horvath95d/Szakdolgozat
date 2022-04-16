@@ -29,6 +29,9 @@ ALTER TABLE `users`
     ADD UNIQUE KEY `username` (`username`),
     ADD KEY `school_id` (`school_id`);
 
+ALTER TABLE `users`
+    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
 -- --------------------------------------------------------
 
 CREATE TABLE `groups`

@@ -19,6 +19,9 @@ ALTER TABLE `school`
     ADD UNIQUE KEY `full_name` (`full_name`),
     ADD UNIQUE KEY `short_name` (`short_name`);
 
+ALTER TABLE `school`
+    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
 ALTER TABLE `users`
     ADD CONSTRAINT `users_fk_1` FOREIGN KEY (`school_id`) REFERENCES `school` (`id`);
 
@@ -39,6 +42,9 @@ ALTER TABLE `subject`
     ADD KEY `school_id` (`school_id`);
 
 ALTER TABLE `subject`
+    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+ALTER TABLE `subject`
     ADD CONSTRAINT `subject_fk_1` FOREIGN KEY (`school_id`) REFERENCES `school` (`id`);
 
 -- --------------------------------------------------------
@@ -56,6 +62,9 @@ ALTER TABLE `room`
     ADD KEY `school_id` (`school_id`);
 
 ALTER TABLE `room`
+    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+ALTER TABLE `room`
     ADD CONSTRAINT `room_fk_1` FOREIGN KEY (`school_id`) REFERENCES `school` (`id`);
 
 CREATE TABLE `room_subject`
@@ -71,6 +80,9 @@ ALTER TABLE `room_subject`
     ADD KEY `school_id` (`school_id`),
     ADD KEY `room_id` (`room_id`),
     ADD KEY `subject_id` (`subject_id`);
+
+ALTER TABLE `room_subject`
+    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 ALTER TABLE `room_subject`
     ADD CONSTRAINT `room_subject_fk_1` FOREIGN KEY (`school_id`) REFERENCES `school` (`id`),
@@ -92,6 +104,9 @@ ALTER TABLE `teacher`
     ADD KEY `school_id` (`school_id`);
 
 ALTER TABLE `teacher`
+    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+ALTER TABLE `teacher`
     ADD CONSTRAINT `teacher_fk_1` FOREIGN KEY (`school_id`) REFERENCES `school` (`id`);
 
 CREATE TABLE `teacher_subject`
@@ -107,6 +122,9 @@ ALTER TABLE `teacher_subject`
     ADD KEY `school_id` (`school_id`),
     ADD KEY `teacher_id` (`teacher_id`),
     ADD KEY `subject_id` (`subject_id`);
+
+ALTER TABLE `teacher_subject`
+    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 ALTER TABLE `teacher_subject`
     ADD CONSTRAINT `teacher_subject_fk_1` FOREIGN KEY (`school_id`) REFERENCES `school` (`id`),
@@ -131,6 +149,9 @@ ALTER TABLE `class`
     ADD KEY `school_id` (`school_id`),
     ADD KEY `teacher_id` (`teacher_id`),
     ADD KEY `room_id` (`room_id`);
+
+ALTER TABLE `class`
+    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 ALTER TABLE `class`
     ADD CONSTRAINT `class_fk_1` FOREIGN KEY (`school_id`) REFERENCES `school` (`id`),
@@ -163,6 +184,9 @@ ALTER TABLE `lesson`
     ADD KEY `room_id` (`room_id`);
 
 ALTER TABLE `lesson`
+    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+ALTER TABLE `lesson`
     ADD CONSTRAINT `lesson_fk_1` FOREIGN KEY (`school_id`) REFERENCES `school` (`id`),
     ADD CONSTRAINT `lesson_fk_2` FOREIGN KEY (`subject_id`) REFERENCES `subject` (`id`) ON DELETE CASCADE,
     ADD CONSTRAINT `lesson_fk_3` FOREIGN KEY (`class_id`) REFERENCES `class` (`id`) ON DELETE CASCADE,
@@ -185,6 +209,9 @@ ALTER TABLE `event`
     ADD KEY `school_id` (`school_id`);
 
 ALTER TABLE `event`
+    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+ALTER TABLE `event`
     ADD CONSTRAINT `event_fk_1` FOREIGN KEY (`school_id`) REFERENCES `school` (`id`);
 
 -- --------------------------------------------------------
@@ -200,6 +227,9 @@ CREATE TABLE `time`
 ALTER TABLE `time`
     ADD PRIMARY KEY (`id`),
     ADD KEY `school_id` (`school_id`);
+
+ALTER TABLE `time`
+    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 ALTER TABLE `time`
     ADD CONSTRAINT `time_fk_1` FOREIGN KEY (`school_id`) REFERENCES `school` (`id`);

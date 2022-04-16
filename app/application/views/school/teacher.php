@@ -15,7 +15,6 @@
                                 <th><?=lang('name')?></th>
                                 <th style="width:220px"><?=lang('link_subject')?></th>
                                 <th><?=lang('max_lesson_number')?></th>
-                                <th><?=lang('lesson_number')?></th>
                                 <th></th>
                             </tr>
                             
@@ -36,7 +35,6 @@
                                 <td>
                                     <input type="number" name="lesson_number[]" min="1" value="1">
                                 </td>
-                                <td></td>
                                 <td>
                                     <a href="#" onclick="insertSubjectSelect(this); return false;" title="<?=lang('btn_insert_subject_title')?>">
                                         <img src="<?=site_url('assets/img/icons/insert.png')?>" alt="<?=lang('btn_insert_subject_title')?>">
@@ -75,9 +73,6 @@
                                 </td>
                                 <td>
                                     <input type="number" name="lesson_number[]" min="1" value="<?=$teacher['lesson_number']?>">
-                                </td>
-                                <td>
-                                    <div class="text-right"><?=$teacher['lessonNumber']?></div>
                                 </td>
                                 <td>
                                     <a href="<?=site_url('?teacher='.$teacher['id'].'&class=&room=')?>" title="<?=lang('btn_jump_timetable')?>">

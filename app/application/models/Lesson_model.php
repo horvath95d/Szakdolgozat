@@ -107,7 +107,7 @@ class Lesson_model extends CI_Model {
         $query = $this->db->query("SELECT `room_id` FROM `room_subject`
             WHERE `subject_id`=".$subjectID."
             GROUP BY `subject_id` HAVING COUNT(*) = 1");
-        return $query->row_array()['room_id'];
+        return isset($query->row_array()['room_id']) ? $query->row_array()['room_id'] : NULL;
     }
 
     // Delete

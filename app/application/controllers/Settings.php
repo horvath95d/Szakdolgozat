@@ -72,7 +72,7 @@ class Settings extends CI_Controller {
             $this->render_page('settings/time', $data);
 
         } else {
-            $this->school_model->getTimes();
+            $this->school_model->saveTimes();
             redirect('settings/time');
         }
     }
