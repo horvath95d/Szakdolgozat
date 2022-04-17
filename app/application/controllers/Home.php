@@ -89,19 +89,19 @@ class Home extends CI_Controller {
         for ($t=1; $t < $countTimes; $t++) { // óra ciklus
             for ($d=1; $d < $this->school['days']+1; $d++) { // nap ciklus
                 foreach ($classes as $class) { // osztály ciklus
-                    $fixedLesson = $this->home_model->getFixedLesson($t, $d, $class['id'], $class['year']);
+                    $lesson = $this->home_model->getFixedLesson($t, $d, $class['id'], $class['year']);
 
-                    if (empty($fixedLesson)) { // ha nincs beállítva óra arra az időpontra
+                    if (empty($lesson)) { // ha nincs beállítva óra arra az időpontra
                         $lesson = $this->home_model->selectLesson($t, $d, $class['id'], $class['year']); // kiválasztunk egy órát
 
                         if ($lesson) { // ha létezik kiválasztott óra
                             $this->home_model->setTime($lesson['id'], $d, $t); //beállítjuk az idejét
-
-                            if ($lesson['room_id'] == NULL) { // ha nincs ennek az órának terme
-                                $roomID = $this->home_model->selectRoom($lesson['subject_id'], $d, $t); // keresünk neki egy termet a tantárgy függvényében
-                                $this->home_model->setRoom($lesson['id'], $roomID); // beállítjuk ezt a termet
-                            }
                         }
+                    }
+
+                    if ($lesson && $lesson['room_id'] == NULL) { // ha nincs ennek az órának terme
+                        $roomID = $this->home_model->selectRoom($lesson['subject_id'], $d, $t); // keresünk neki egy termet a tantárgy függvényében
+                        $this->home_model->setRoom($lesson['id'], $roomID); // beállítjuk ezt a termet
                     }
                 }
             }
